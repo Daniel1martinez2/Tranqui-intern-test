@@ -12,7 +12,7 @@ And then you should be able to run it using:
 
 ### Backend:
 - [X] You must add an endpoint that returns a json array that represents a random list of names between 5 and 8 elements.
-- [ ] The names must be realistic, not just random strings.
+- [X] The names must be realistic, not just random strings.
 - [ ] You must add an endpoint that updates the file `server/counter.txt` with a counter each time a request for a particular name is received.
   - [ ] If the name didn't previously exist in the file, create a new line and start counting.
   - [ ] If the name already exists, update the counter.

@@ -1,58 +1,31 @@
 import express from 'express'; 
+import fs from 'fs'; 
+import path from 'path'; 
+import { userList } from '../utils/namesList';
+import { setUserListLengthRange } from '../utils/setUserListLengthRange'; 
+import { getRandomUserList } from '../utils/getRandomUserList'; 
+
 
 const router = express.Router();
+const filePath = path.join(__dirname,'../','counter.txt');
 
-type UserType = string; 
-
-//Names
-const userList: UserType[] = [
-  'Sebastian',
-  'Daniel',
-  'Sofia',
-  'Elizabeth',
-  'John',
-  'Sherlock',
-  'Esteban',
-  'Angelica',
-  'Alexander',
-  'Hamilton',
-  'Alex',
-  'Rodrigo',
-  'Andrew'
-];
-
-// Function which returns an random index according to a given length
-const getRandomIndex = (length: number) => {
-  return Math.floor(Math.random()*length);
-}
-
-// Function which returns an random number according to a given range
-const setUserListLengthRange = (start: number, end: number) => {
-  return Math.round((Math.random()*(end-start)+start));
-}
-
-//Function which returns the list of users. And, check wether each user is unique before adding it to the list
-const getNewUser = ( listToPush: UserType[], seedList: UserType[]) => {
-  let newUser = seedList[getRandomIndex(seedList.length)];
-  while (listToPush.includes(newUser)){
-    newUser = seedList[getRandomIndex(seedList.length)]; 
-  }
-  listToPush.push(newUser); 
-}
-
-
-
-const getRandomUserList = (length: number, userListSeed: UserType[]) => {
-  
-  const finalUserList: UserType[] = []; 
-  for (let index = 0; index < length; index++) {
-    getNewUser(finalUserList, userListSeed)
-  }
-  return finalUserList; 
-}
-
-router.get('/users', (req, res, next) => {
+router.get('/', (req, res) => {
   res.json(getRandomUserList(setUserListLengthRange(5,8), userList)); 
+})
+
+router.get('/:name', (req, res) => {
+  fs.readFile( filePath, 'utf8', (err, data) => {
+    if(err){
+      console.log('ERROR!');
+      console.log(err);
+    } else {
+      console.log(data);
+    }
+  }); 
+
+  // console.log(req.params.name);
+  res.json({hi: 'aaaa'}); 
+
 })
 
 export default router;
