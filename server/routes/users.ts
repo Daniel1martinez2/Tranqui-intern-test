@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
   res.json(getRandomUserList(setUserListLengthRange(5,8), userList));
 });
 
-router.get('/:name', (req, res) => {
+router.post('/', (req, res) => {
   //Get the value from the request
-  const name = req.params.name;
+  const name = req.body.name;
   //Initialize the variable which represents the string which will set the txt file
   let txtUsers = '';
 
@@ -52,7 +52,7 @@ router.get('/:name', (req, res) => {
       txtUsers+= `${name}: ${1}\n`;
       // Set the txt file
       fs.writeFileSync(filePath, txtUsers );
-      usersFromTxt.push({name, times: 1}); 
+      usersFromTxt.push({name, times: 1});
       res.json(usersFromTxt);
       return
     }
@@ -60,9 +60,9 @@ router.get('/:name', (req, res) => {
     //Wether the requested user already exist in the user list
     // Set the user repetition value
     usersFromTxt[currentUserIndex].times++;
-    txtUsers = userObjListToString(usersFromTxt); 
+    txtUsers = userObjListToString(usersFromTxt);
     // Set the txt file
-    fs.writeFileSync(filePath, txtUsers ); 
+    fs.writeFileSync(filePath, txtUsers );
     res.json(usersFromTxt);
 
   }); 
