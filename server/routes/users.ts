@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
   res.json(getRandomUserList(setUserListLengthRange(5,8), userList));
 });
 
-router.post('/', (req, res) => {
+router.get('/:name', (req, res) => {
   //Get the value from the request
-  const name = req.body.name;
+  const name = req.params.name;
   //Initialize the variable which represents the string which will set the txt file
   let txtUsers = '';
 

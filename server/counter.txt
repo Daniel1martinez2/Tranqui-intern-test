@@ -1,3 +1,4 @@
-Angelica: 2
-Jhon: 3
-pablo: 5
+Andrew: 1
+Daniel: 1
+Sofia: 1
+Esteban: 1

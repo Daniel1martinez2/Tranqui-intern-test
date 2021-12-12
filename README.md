@@ -19,7 +19,7 @@ And then you should be able to run it using:
   - [X] You can see the initial file for an example.
 
 ### Frontend:
-- [ ] You must request the json array from the backend when the application is loaded, and also refresh the list every 5 seconds.
-- [ ] You must render the array as a button list.
-- [ ] Each time the user presses a name/button, send a request to the counter endpoint to update the counter for that person.
-- [ ] You must use MaterialUI
+- [X] You must request the json array from the backend when the application is loaded, and also refresh the list every 5 seconds.
+- [X] You must render the array as a button list.
+- [X] Each time the user presses a name/button, send a request to the counter endpoint to update the counter for that person.
+- [X] You must use MaterialUI
