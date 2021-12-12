@@ -13,10 +13,10 @@ And then you should be able to run it using:
 ### Backend:
 - [X] You must add an endpoint that returns a json array that represents a random list of names between 5 and 8 elements.
 - [X] The names must be realistic, not just random strings.
-- [ ] You must add an endpoint that updates the file `server/counter.txt` with a counter each time a request for a particular name is received.
-  - [ ] If the name didn't previously exist in the file, create a new line and start counting.
-  - [ ] If the name already exists, update the counter.
-  - [ ] You can see the initial file for an example.
+- [X] You must add an endpoint that updates the file `server/counter.txt` with a counter each time a request for a particular name is received.
+  - [X] If the name didn't previously exist in the file, create a new line and start counting.
+  - [X] If the name already exists, update the counter.
+  - [X] You can see the initial file for an example.
 
 ### Frontend:
 - [ ] You must request the json array from the backend when the application is loaded, and also refresh the list every 5 seconds.

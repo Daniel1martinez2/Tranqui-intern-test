@@ -13,5 +13,8 @@ export const userList: UserType[] = [
   'Hamilton',
   'Alex',
   'Rodrigo',
-  'Andrew'
+  'Andrew',
+  'Juanita Gómez',
+  'Pepito Pérez'
+
 ];
